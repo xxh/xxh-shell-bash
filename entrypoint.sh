@@ -25,4 +25,4 @@ fi
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $CURRENT_DIR
 
-bash $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"
+bash --rcfile bashrc $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

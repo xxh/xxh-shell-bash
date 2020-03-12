@@ -26,5 +26,6 @@ CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $CURRENT_DIR
 
 export XXH_HOME=`realpath -m $CURRENT_DIR/../../../../`
+export HISTFILE=$XXH_HOME/.bash_history
 
 bash --rcfile bashrc $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

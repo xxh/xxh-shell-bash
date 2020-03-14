@@ -1,8 +1,12 @@
 #!/usr/bin/env xonsh
 
-import sys
+import sys, argparse
 from sys import exit
 from shutil import which
+
+parser = argparse.ArgumentParser(description='build')
+parser.add_argument('-q', '--quiet', action='store_true', help=f"Quiet mode")
+opt = parser.parse_args()
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)

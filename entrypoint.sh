@@ -1,11 +1,12 @@
 #!/bin/bash
 
-while getopts f:c:v:e: option
+while getopts f:c:C:v:e: option
 do
 case "${option}"
 in
 f) EXECUTE_FILE=${OPTARG};;
 c) EXECUTE_COMMAND=${OPTARG};;
+C) EXECUTE_COMMAND_B64=${OPTARG};;
 v) VERBOSE=${OPTARG};;
 e) ENV+=("$OPTARG");;
 esac
@@ -16,6 +17,20 @@ if [[ $VERBOSE != '' ]]; then
 fi
 
 if [[ $EXECUTE_COMMAND ]]; then
+  if [[ $XXH_VERBOSE == '1' || $XXH_VERBOSE == '2' ]]; then
+    echo Execute command: $EXECUTE_COMMAND
+  fi
+
+  EXECUTE_COMMAND=(-c "${EXECUTE_COMMAND}")
+fi
+
+if [[ $EXECUTE_COMMAND_B64 ]]; then
+  EXECUTE_COMMAND=`echo $EXECUTE_COMMAND_B64 | base64 -d`
+  if [[ $XXH_VERBOSE == '1' || $XXH_VERBOSE == '2' ]]; then
+    echo Execute command base64: $EXECUTE_COMMAND_B64
+    echo Execute command: $EXECUTE_COMMAND
+  fi
+
   EXECUTE_COMMAND=(-c "${EXECUTE_COMMAND}")
 fi
 

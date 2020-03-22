@@ -1,4 +1,4 @@
-[Xxh](https://github.com/xxh/xxh) entrypoint for bash. 
+[xxh](https://github.com/xxh/xxh) entrypoint for bash. The "zero" means using bash shell installed on host without any additional installations. 
 
 ## Install
 ```

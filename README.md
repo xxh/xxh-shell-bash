@@ -2,9 +2,7 @@
 
 ## Install
 ```
-cd ~/.xxh/xxh/shells/
-git clone https://github.com/xxh/xxh-shell-bash-zero
-./xxh-shell-bash-zero/build.sh
+xxh +I xxh-shell-bash-zero 
 xxh myhost +s xxh-shell-bash-zero
 ```
 To avoid adding `+s` every time use xxh config in `~/.xxh/.xxhc`:

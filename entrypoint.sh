@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts f:c:C:v:e: option
+while getopts f:c:C:v:e:H: option
 do
 case "${option}"
 in
@@ -9,6 +9,7 @@ c) EXECUTE_COMMAND=${OPTARG};;
 C) EXECUTE_COMMAND_B64=${OPTARG};;
 v) VERBOSE=${OPTARG};;
 e) ENV+=("$OPTARG");;
+H) HOMEPATH=${OPTARG};;
 esac
 done
 
@@ -56,6 +57,11 @@ cd $CURRENT_DIR
 export XXH_HOME=`readlink -f $CURRENT_DIR/../../../..`
 export XDG_CONFIG_HOME=$XXH_HOME/.config
 export HISTFILE=$XXH_HOME/.bash_history
-export HOME=$XXH_HOME
+
+if [[ $HOMEPATH != '' ]]; then
+  export HOME=`readlink -f $HOMEPATH`
+else
+  export HOME=$XXH_HOME
+fi
 
 bash --rcfile bashrc $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

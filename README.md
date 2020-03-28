@@ -5,7 +5,7 @@
 xxh +I xxh-shell-bash-zero 
 xxh myhost +s xxh-shell-bash-zero
 ```
-To avoid adding `+s` every time use xxh config in `~/.xxh/.xxhc`:
+To avoid adding `+s` every time use xxh config in `~/.config/xxh/config.xxhc` (`$XDG_CONFIG_HOME`):
 ```
 hosts:
   ".*":                     # Regex for all hosts

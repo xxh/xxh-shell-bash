@@ -59,7 +59,14 @@ export XDG_CONFIG_HOME=$XXH_HOME/.config
 export HISTFILE=$XXH_HOME/.bash_history
 
 if [[ $HOMEPATH != '' ]]; then
-  export HOME=`readlink -f $HOMEPATH`
+  homerealpath=`readlink -f $HOMEPATH`
+  if [[ -d $homerealpath ]]; then
+    export HOME=$homerealpath
+  else
+    echo "Home path not found: $homerealpath"
+    echo "Set HOME to $XXH_HOME"
+    export HOME=$XXH_HOME
+  fi
 else
   export HOME=$XXH_HOME
 fi

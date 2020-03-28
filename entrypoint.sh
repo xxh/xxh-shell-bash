@@ -56,6 +56,6 @@ cd $CURRENT_DIR
 export XXH_HOME=`readlink -f $CURRENT_DIR/../../../..`
 export XDG_CONFIG_HOME=$XXH_HOME/.config
 export HISTFILE=$XXH_HOME/.bash_history
-export $HOME=$XXH_HOME
+export HOME=$XXH_HOME
 
 bash --rcfile bashrc $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

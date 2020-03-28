@@ -53,7 +53,7 @@ done
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $CURRENT_DIR
 
-export XXH_HOME=`dirname $CURRENT_DIR/../../../../p`
+export XXH_HOME=`readlink -f $CURRENT_DIR/../../../..`
 export XDG_CONFIG_HOME=$XXH_HOME/.config
 export HISTFILE=$XXH_HOME/.bash_history
 

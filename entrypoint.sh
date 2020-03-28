@@ -55,8 +55,13 @@ CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $CURRENT_DIR
 
 export XXH_HOME=`readlink -f $CURRENT_DIR/../../../..`
+
+if [[ ! -d $XXH_HOME/.local/share/bash ]]; then
+  mkdir -p $XXH_HOME/.local/share/bash
+fi
+
 export XDG_CONFIG_HOME=$XXH_HOME/.config
-export HISTFILE=$XXH_HOME/.bash_history
+export HISTFILE=$XXH_HOME/.local/share/bash/.bash_history
 
 if [[ $HOMEPATH != '' ]]; then
   homerealpath=`readlink -f $HOMEPATH`

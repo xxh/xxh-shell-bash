@@ -9,6 +9,7 @@ c) EXECUTE_COMMAND=${OPTARG};;
 C) EXECUTE_COMMAND_B64=${OPTARG};;
 v) VERBOSE=${OPTARG};;
 e) ENV+=("$OPTARG");;
+b) EBASH+=("$OPTARG");;
 H) HOMEPATH=${OPTARG};;
 esac
 done
@@ -49,6 +50,15 @@ for env in "${ENV[@]}"; do
   fi
 
   export $name="$val"
+done
+
+for eb in "${EBASH[@]}"; do
+  bash_command=`echo $eb | base64 -d`
+
+  if [[ $XXH_VERBOSE == '1' || $XXH_VERBOSE == '2' ]]; then
+    echo Entrypoint bash execute: $bash_command
+  fi
+  eval $bash_command
 done
 
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"

@@ -86,4 +86,4 @@ else
   export HOME=$XXH_HOME
 fi
 
-bash --rcfile bashrc $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"
+bash --rcfile bashrc -i $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

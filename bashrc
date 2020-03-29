@@ -1,4 +1,4 @@
-CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 for pluginrc_file in $CURRENT_DIR/../../../plugins/*-bash-*/build/pluginrc.sh; do
   if [[ -f $pluginrc_file ]]; then

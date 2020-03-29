@@ -5,7 +5,7 @@ for pluginrc_file in $CURRENT_DIR/../../../plugins/*-bash-*/build/pluginrc.sh; d
     if [[ $XXH_VERBOSE == '1' ]]; then
       echo Load plugin $pluginrc_file
     fi
-
+    cd $(dirname $pluginrc_file)
     source $pluginrc_file
   fi
 done

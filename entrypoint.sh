@@ -70,9 +70,6 @@ if [[ ! -d $XXH_HOME/.local/share/bash ]]; then
   mkdir -p $XXH_HOME/.local/share/bash
 fi
 
-export XDG_CONFIG_HOME=$XXH_HOME/.config
-export HISTFILE=$XXH_HOME/.local/share/bash/.bash_history
-
 if [[ $HOMEPATH != '' ]]; then
   homerealpath=`readlink -f $HOMEPATH`
   if [[ -d $homerealpath ]]; then
@@ -85,5 +82,8 @@ if [[ $HOMEPATH != '' ]]; then
 else
   export HOME=$XXH_HOME
 fi
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
 
 bash --rcfile bashrc -i $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

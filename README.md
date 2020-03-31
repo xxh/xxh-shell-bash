@@ -16,4 +16,4 @@ hosts:
 
 Pinned: [xxh-plugin-bash-vim](https://github.com/xxh/xxh-plugin-bash-vim)
 
-🔎 [Search xxh plugins on Github](https://github.com/search?q=xxh-plugin-bash&type=Repositories) or [Bitbucket](https://bitbucket.org/repo/all?name=xxh-plugin-bash) or 💡 [Create xxh plugin](https://github.com/xxh/xxh-plugin-bash-sample)
+🔎 [Search xxh plugins on Github](https://github.com/search?q=xxh-plugin-bash&type=Repositories) or [Bitbucket](https://bitbucket.org/repo/all?name=xxh-plugin-bash) or 💡 [Create xxh plugin](https://github.com/xxh/xxh-plugin-bash-example)

@@ -2,11 +2,13 @@
 
 CDIR="$(cd "$(dirname "$0")" && pwd)"
 
-while getopts q option
+while getopts A:K:q option
 do
   case "${option}"
   in
     q) QUIET=1;;
+    A) ARCH=${OPTARG};;
+    K) KERNEL=${OPTARG};;
   esac
 done
 

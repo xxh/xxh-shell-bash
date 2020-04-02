@@ -1,6 +1,6 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-for pluginrc_file in $CURRENT_DIR/../../../plugins/*-bash-*/build/pluginrc.sh; do
+for pluginrc_file in $(find $CURRENT_DIR/../../../plugins/*-bash-*/build -type f -name '*pluginrc.sh' -printf '%f\t%p\n' 2>/dev/null | sort -k1 | cut -d$'\t' -f2); do
   if [[ -f $pluginrc_file ]]; then
     plugin_name=`basename $(dirname $(dirname $pluginrc_file))`
 

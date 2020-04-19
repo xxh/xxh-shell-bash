@@ -30,4 +30,4 @@ for pluginrc_file in $(find $CURRENT_DIR/../../../plugins/*-bash-*/build -type f
   fi
 done
 
-cd ~
+cd $HOME

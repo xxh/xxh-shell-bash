@@ -2,14 +2,14 @@
 
 ## Install
 ```
-xxh +I xxh-shell-bash-zero 
-xxh myhost +s bash-zero
+xxh +I xxh-shell-bash 
+xxh myhost +s bash
 ```
 To avoid adding `+s` every time use xxh config in `~/.config/xxh/config.xxhc` (`$XDG_CONFIG_HOME`):
 ```
 hosts:
   ".*":                     # Regex for all hosts
-    +s: bash-zero
+    +s: bash
 ```
 
 ## Plugins

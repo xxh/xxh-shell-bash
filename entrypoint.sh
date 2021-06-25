@@ -122,4 +122,4 @@ for pluginrc_file in $(find $CURRENT_DIR/../../../plugins/xxh-plugin-*/build -ty
 done
 
 cd $HOME
-bash --rcfile bashrc -i $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"
+bash --rcfile $CURRENT_DIR/bashrc -i $EXECUTE_FILE "${EXECUTE_COMMAND[@]}"

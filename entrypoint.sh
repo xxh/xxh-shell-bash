@@ -77,7 +77,7 @@ done
 CURRENT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $CURRENT_DIR
 
-export XXH_HOME=$CURRENT_DIR/../../../..
+export XXH_HOME=`readlink -f $CURRENT_DIR/../../../..`
 
 if [[ ! -d $XXH_HOME/.local/share/bash ]]; then
   mkdir -p $XXH_HOME/.local/share/bash
